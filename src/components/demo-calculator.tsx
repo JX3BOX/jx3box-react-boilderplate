@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { selectCount } from "@/store/selector";
-import { increaseAction, reduceAction } from "@/store/demo/action";
+import {
+  increaseCount,
+  reduceCount,
+  increaseCountByPayload,
+} from "@/store/demo";
+import { useCallback, useState } from "react";
 
 const DemoCalculator = () => {
   const dispatch = useDispatch();
@@ -10,6 +15,11 @@ const DemoCalculator = () => {
    */
   const count = useSelector(selectCount);
 
+  const [increaseValue, setIncreasedValue] = useState(1);
+  const onChangeValue = useCallback(
+    (event) => setIncreasedValue(event.target.value),
+    []
+  );
   /**
    * dispatch increase action stuff
    * @method increaseHandle
@@ -18,11 +28,19 @@ const DemoCalculator = () => {
    * @method reduceHandle
    */
   const increaseHandle = () => {
-    dispatch(increaseAction());
+    dispatch(increaseCount());
   };
   const reduceHandle = () => {
-    dispatch(reduceAction());
+    dispatch(reduceCount());
   };
+
+  /**
+   * dispatch with payload demo
+   * @method increasePayloadHandle
+   */
+  const increasePayloadHandle = useCallback(() => {
+    dispatch(increaseCountByPayload(Number(increaseValue)));
+  }, [increaseValue]);
 
   return (
     <div>
@@ -34,6 +52,11 @@ const DemoCalculator = () => {
         </span>
         <span onClick={reduceHandle}>reduce</span>
       </div>
+
+      <p>
+        <input value={increaseValue} onChange={onChangeValue} />
+        <div onClick={increasePayloadHandle}>increase by value</div>
+      </p>
     </div>
   );
 };
