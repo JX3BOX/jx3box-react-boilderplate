@@ -1,11 +1,12 @@
+import { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Input, Button, Space } from "antd";
 import { selectCount } from "@/store/selector";
 import {
   increaseCount,
   reduceCount,
   increaseCountByPayload,
 } from "@/store/demo";
-import { useCallback, useState } from "react";
 
 const DemoCalculator = () => {
   const dispatch = useDispatch();
@@ -44,19 +45,20 @@ const DemoCalculator = () => {
 
   return (
     <div>
-      {count}
+      <Space>
+        <div>{count}</div>
+        <Button onClick={increaseHandle}>increase</Button>
+        <Button onClick={reduceHandle}>reduce</Button>
+      </Space>
 
-      <div>
-        <span onClick={increaseHandle} style={{ marginRight: "10px" }}>
-          increase
-        </span>
-        <span onClick={reduceHandle}>reduce</span>
-      </div>
-
-      <div style={{ marginTop: "10px" }}>
-        <input value={increaseValue} onChange={onChangeValue} />
-        <div onClick={increasePayloadHandle}>increase by value</div>
-      </div>
+      <Input.Group compact={true} style={{ marginTop: "10px" }}>
+        <Input
+          style={{ width: "200px" }}
+          value={increaseValue}
+          onChange={onChangeValue}
+        />
+        <Button onClick={increasePayloadHandle}>increase by value</Button>
+      </Input.Group>
     </div>
   );
 };
