@@ -53,10 +53,10 @@ const DemoCalculator = () => {
         <span onClick={reduceHandle}>reduce</span>
       </div>
 
-      <p>
+      <div style={{ marginTop: "10px" }}>
         <input value={increaseValue} onChange={onChangeValue} />
         <div onClick={increasePayloadHandle}>increase by value</div>
-      </p>
+      </div>
     </div>
   );
 };

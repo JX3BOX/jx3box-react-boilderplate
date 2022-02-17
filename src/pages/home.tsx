@@ -1,3 +1,9 @@
-const Home = () => <div>Jx3Box Home</div>;
+import DemoCalculator from "@/components/demo-calculator";
+
+const Home = () => (
+  <div>
+    <DemoCalculator />
+  </div>
+);
 
 export default Home;
