@@ -19,9 +19,7 @@ const Home = React.lazy(() => import("../pages/home"));
  *
  * ```javascript
  * <Routes>
- *  <Route path='/'>
- *    <Home />
- *  </Route>
+ *  <Route path="/" element={<Home />} />
  * </Routes>
  * ```
  *
