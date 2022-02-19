@@ -4,6 +4,11 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: path.resolve(__dirname, "index.html"),
+    },
+  },
   resolve: {
     alias: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
   },
