@@ -343,10 +343,10 @@
     moment "^2.29.1"
     vue "^2.6.12"
 
-"@jx3box/jx3box-ui-react@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@jx3box/jx3box-ui-react/-/jx3box-ui-react-0.0.8.tgz#3423aaaeb2a443c97282f6d8ff4c85e5c8ba804d"
-  integrity sha512-nemn2Vt5Pen6ae6qao9kO7PX2s0bzinv7xRGhrZ8gBB5jrAP9fKojEULG/RJFiMMIM8MnJfHyzE6OZAsTpoQ/A==
+"@jx3box/jx3box-ui-react@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@jx3box/jx3box-ui-react/-/jx3box-ui-react-0.0.10.tgz#21acf4e024e6977d36f403425bb90b582d8109cc"
+  integrity sha512-dgmxPEtXWQKPawDCjJC6xS5nkRhh97GdqnlVjN6XldZnwZCBVpis3BiXbILWwFJA+q4U77sZdtRBZeYINlsiqQ==
   dependencies:
     "@ant-design/icons" "^4.7.0"
     "@jx3box/jx3box-common" "^7.0.2"
